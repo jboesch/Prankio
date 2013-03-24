@@ -1,0 +1,70 @@
+@font_size: 15px;
+@font_family: 'ProximaNovaLight', 'Helvetica Neue', 'Helvetica', 'Arial';
+
+@import "reset.less";
+@import "fonts.less";
+@import "forms.less";
+@import "buttons.less";
+
+body {
+    background: #fff url(../img/gray_jean.png);
+    color: #333;
+}
+body {
+    font-size: @font_size;
+    line-height: 170%;
+    font-family: @font_family;
+}
+
+#container {
+    width: 390px;
+    margin: 0 auto 50px auto;
+}
+
+h1 a {
+    display: block;
+    width: 290px;
+    height: 339px;
+    background: url(../img/logo.png);
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+
+h3.grey-line {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+h3.grey-line:before {
+    border-top: 1px solid #ccc;
+    content:"";
+    margin: 0 auto;
+    position: absolute;
+    top: 15px; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+h3.grey-line span {
+    background: url(../img/gray_jean.png);
+    padding: 0 10px;
+}
+
+.add-boxes {
+    margin-top: 10px;
+}
+
+.email-me-recording {
+    .checkbox,
+    h3 {
+        float: left;
+    }
+
+    h3 {
+        margin: 0 0 0 20px;
+    }
+}
+
+.email {
+    margin-top: 20px !important;
+}
+
