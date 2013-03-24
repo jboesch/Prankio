@@ -12,7 +12,7 @@ A prank calling app built on top of the Twilio API.
 
 * Open up config/config.php and fill in the proper config values
 * Visit the project root and you should see it come up
-* If all is well, now upload it to your public web server so Twilio can hit your callback URLs.
+* If all is well, now upload it to your public web server so Twilio can hit your callback URLs (specified in config/config.php with 'Url.' prefix)
 
 ## But I don't have a Postmark email account, can I use something else?
 Absolutely, just follow these steps:
