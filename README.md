@@ -1,6 +1,10 @@
 # Prankio!
 A prank calling app built on top of the Twilio API.
 
+## What does it do?
+You enter a phone number, add some messages an pauses between messages and it will read the conversation to that person when they pick up their phone.
+After the phone call is over, it email email you the conversation. It'll be hilarious, you just wait and see!
+
 ## Requirements
 
 * PHP 5+

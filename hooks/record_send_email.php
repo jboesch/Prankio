@@ -12,9 +12,10 @@ define('POSTMARKAPP_MAIL_FROM_ADDRESS', PrankioConfig::get('Postmark.mail_from_a
 define('POSTMARKAPP_MAIL_FROM_NAME', PrankioConfig::get('Postmark.mail_from_name'));
 
 $recording_url = $_REQUEST['RecordingUrl'];
+$message = "You're so funny! Listen to this prank call: " . $recording_url . " or if you want the mp3 version: " . $recording_url . '.mp3';
 // Create a message and send it
 Mail_Postmark::compose()
     ->addTo($_REQUEST['email'])
     ->subject('Prankio Recording')
-    ->messagePlain("You're so funny! Listen to this prank call: " . $recording_url)
+    ->messagePlain($message)
     ->send();
