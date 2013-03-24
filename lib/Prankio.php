@@ -57,6 +57,9 @@ class PrankioRequest {
             }
         }
 
+        // Just as a precaution.
+        $xml .= '<Pause length="3"></Pause>';
+
         return $xml;
 
     }
