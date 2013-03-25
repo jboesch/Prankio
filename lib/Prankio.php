@@ -46,22 +46,22 @@ class PrankioRequest {
     /*
      *  Create XML to send over the wire
      */
-    protected function _createXML(){
+    protected function _createJSON(){
 
-        $xml = '';
+        $xml = array();
 
         foreach($this->actions as $action_key => $action_val){
             if($action_key % 2 == 0){
-                $xml .= '<Say>' . $action_val . '</Say>';
+                $xml[] = array('Say' => $action_val);
             } else {
-                $xml .= '<Pause length="' . $action_val . '"></Pause>';
+                $xml[] = array('Pause' => $action_val);
             }
         }
 
         // Just as a precaution.
-        $xml .= '<Pause length="3"></Pause>';
+        $xml[] = array('Pause' => 4);
 
-        return $xml;
+        return json_encode($xml);
 
     }
 
@@ -70,9 +70,10 @@ class PrankioRequest {
      */
     protected function _request(){
 
-        $xml = $this->_createXML();
+        $json = $this->_createJSON();
+
         $client = new Services_Twilio($this->sid, $this->token);
-        $client->account->calls->create($this->from, "+1" . $this->phone, PrankioConfig::get('Url.hooks_voice_file') . "?xml=" . urlencode($xml), array(
+        $client->account->calls->create($this->from, "+1" . $this->phone, PrankioConfig::get('Url.hooks_voice_file') . "?json=" . urlencode($json), array(
             "IfMachine" => "Hangup",
             "Record" => true,
             "Method" => "GET",
