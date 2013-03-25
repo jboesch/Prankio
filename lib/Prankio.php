@@ -1,8 +1,8 @@
 <?
-$dir = dirname(__FILE__);
-require_once($dir . '/../config/bootstrap.php');
-require_once($dir . '/../vendors/twilio-php/Services/Twilio.php');
-require_once($dir . '/../vendors/postmark/Postmark.php');
+define('ROOT_DIR', dirname(__FILE__));
+require_once(ROOT_DIR . '/../config/bootstrap.php');
+require_once(ROOT_DIR . '/../vendors/twilio-php/Services/Twilio.php');
+require_once(ROOT_DIR . '/../vendors/postmark/Postmark.php');
 
 class PrankioValidationException extends Exception {};
 
@@ -80,6 +80,15 @@ class PrankioRequest {
             "StatusCallbackMethod" => "GET",
             "StatusCallback" => PrankioConfig::get('Url.record_send_email_file') . "?email=" . $this->email
         ));
+
+        $this->_writeToLogs($json);
+
+    }
+
+    protected function _writeToLogs($json){
+
+        $file = ROOT_DIR . '/../logs/' . date('Y-m-d') . '_' . date('H_i_s') . '.json';
+        file_put_contents($file, $json, FILE_APPEND);
 
     }
 
