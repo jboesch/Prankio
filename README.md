@@ -17,6 +17,7 @@ After the phone call is over, it email email you the conversation. It'll be hila
 * Open up config/config.php and fill in the proper config values
 * Visit the project root and you should see it come up
 * If all is well, now upload it to your public web server so Twilio can hit your callback URLs (specified in config/config.php with 'Url.' prefix)
+* chmod 777 the logs directory
 
 ## But I don't have a Postmark email account, can I use something else?
 Absolutely, just follow these steps:
