@@ -1,7 +1,8 @@
 <?
-require_once('../config/bootstrap.php');
-require_once('../vendors/twilio-php/Services/Twilio.php');
-require_once('../vendors/postmark/Postmark.php');
+$dir = dirname(__FILE__);
+require_once($dir . '/../config/bootstrap.php');
+require_once($dir . '/../vendors/twilio-php/Services/Twilio.php');
+require_once($dir . '/../vendors/postmark/Postmark.php');
 
 class PrankioValidationException extends Exception {};
 

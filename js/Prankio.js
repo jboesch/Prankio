@@ -115,7 +115,7 @@ var Prankio = {
 
             $.ajax({
                 data: data,
-                url: 'lib/hilariousness.php',
+                url: 'ajax.php',
                 type: 'POST',
                 dataType: 'json',
                 success: function(res){

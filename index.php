@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Prankio</title>
+    <title>Prankio! An prank call app using the Twilio API by @jboesch</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <script src="js/jquery.min.js"></script>
@@ -55,6 +55,8 @@
 
             </div>
         </form>
+
+        <div class="credits">A brainchild of <a href="http://twitter.com/jboesch">@jboesch</a></div>
 
     </div>
 
