@@ -120,11 +120,7 @@ var Prankio = {
                 dataType: 'json',
                 success: function(res){
                     self.enableSubmit();
-                    if(res.status == 'error'){
-                        alert(res.message);
-                    } else {
-                        alert('Success! The call is being made. Alert messages rock!');
-                    }
+                    alert(res.message);
                 }
             });
 

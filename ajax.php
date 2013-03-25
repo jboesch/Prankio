@@ -10,7 +10,7 @@ $actions = isset($_POST['actions']) ? $_POST['actions'] : array();
 
 try {
     new PrankioRequest($phone, $email, $actions);
-    echo json_encode(array('status' => 'success', 'message' => 'Worked!'));
+    echo json_encode(array('status' => 'success', 'message' => 'Success! The call is being made. Alert messages rock!'));
 } catch(Exception $e){
     echo json_encode(array('status' => 'error', 'message' => $e->getMessage()));
 }
